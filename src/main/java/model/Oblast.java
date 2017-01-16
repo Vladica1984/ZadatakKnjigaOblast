@@ -60,9 +60,10 @@ public class Oblast {
         this.knjiga = knjiga;
     }
 
-    public Oblast(String naziv, int pocetnaStrana) {
+    public Oblast(String naziv, int pocetnaStrana, Knjiga knjiga) {
         this.naziv = naziv;
         this.pocetnaStrana = pocetnaStrana;
+        this.knjiga = knjiga;
     }
 
     @Override

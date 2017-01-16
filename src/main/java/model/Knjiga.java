@@ -1,5 +1,6 @@
 package model;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -27,7 +28,7 @@ public class Knjiga {
     private boolean prisutna;
 
     @ForeignCollectionField(foreignFieldName = "knjiga")
-    ForeignCollectionField<Oblast> oblast;
+    ForeignCollection<Oblast> oblast;
 
     public int getId() {
         return id;
@@ -69,11 +70,11 @@ public class Knjiga {
         this.prisutna = prisutna;
     }
 
-    public ForeignCollectionField<Oblast> getOblast() {
+    public ForeignCollection<Oblast> getOblast() {
         return oblast;
     }
 
-    public void setOblast(ForeignCollectionField<Oblast> oblast) {
+    public void setOblast(ForeignCollection<Oblast> oblast) {
         this.oblast = oblast;
     }
 

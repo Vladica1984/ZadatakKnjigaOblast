@@ -10,6 +10,7 @@ import model.Knjiga;
 import model.Oblast;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by androiddevelopment on 16.1.17..
@@ -21,7 +22,7 @@ public class Zadatak2DodavanjeVrednosti {
 
 
     public static void main(String[] args) {
-        ConnectionSource connectionSource = null;
+        JdbcConnectionSource connectionSource = null;
         try {
             connectionSource = new JdbcConnectionSource("jdbc:sqlite:knjigaOblast.db");
 
@@ -47,7 +48,11 @@ public class Zadatak2DodavanjeVrednosti {
             Oblast o5 = new Oblast("Activity clasa", 30, k2);
             oblastDao.create(o5);
 
-            
+            List<Oblast> oblasti = oblastDao.queryForAll();
+            for(Oblast o: oblasti) {
+                System.out.println(o);
+            }
+
 
         } catch (Exception e) {
             e.printStackTrace();
